@@ -1,1 +1,1 @@
-# data-structure-learning
+# Do it! 자료구조와 함께 배우는 알고리즘 서적을 이용한 자료구조 공부
