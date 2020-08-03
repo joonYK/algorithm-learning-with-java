@@ -1,6 +1,6 @@
 package doIt.ch02;
 
-public class CloneArray {
+public class CloneArray_02_03 {
     public static void main(String[] args) {
         int[] a = {1,2,3,4,5};
         int[] b = a.clone();
