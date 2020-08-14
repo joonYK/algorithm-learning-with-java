@@ -1,11 +1,11 @@
-package doIt.ch02;
+package doIt.ch02.practice;
 
 import java.util.Scanner;
 
 /**
- * 그 해의 경과 일 수를 구함
+ * DayOfYear_02_13의 메서등 dayOfYear를 변수 i와 days없이 구현. while문을 사용.
  */
-public class DayOfYear {
+public class Q_02_08 {
 
     //각 달의 일수
     static int[][] mdays = {
@@ -20,14 +20,17 @@ public class DayOfYear {
 
     // 서기 y년 m월 d일의 그 해 경과 일 수를 구함
     static int dayOfYear(int y, int m, int d) {
-        //일 수
-        int days = d;
+        m--;
+        while(m > 0) {
+            d += mdays[isLeap(y)][--m];
+        }
 
-        // 1월~(m-1)월의 일 수를 구함
-        for (int i = 1; i < m; i++)
-            days += mdays[isLeap(y)][i - 1];
+        //답안지의 답
+        /*while (--m != 0)
+            d += mdays[isLeap(y)][m - 1];*/
 
-        return days;
+
+        return d;
     }
 
     public static void main(String[] args) {
@@ -47,5 +50,4 @@ public class DayOfYear {
             retry = stdIn.nextInt();
         } while (retry == 1);
     }
-
 }

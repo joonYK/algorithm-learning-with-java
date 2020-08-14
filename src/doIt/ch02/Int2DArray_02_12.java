@@ -3,7 +3,7 @@ package doIt.ch02;
 /**
  * 2행 4열의 2차원 배열
  */
-public class Int2DArray {
+public class Int2DArray_02_12 {
     public static void main(String[] args) {
         int[][] x = new int[2][4];
 
