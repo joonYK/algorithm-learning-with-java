@@ -2,7 +2,7 @@ package doIt.ch02;
 
 import java.util.Scanner;
 
-public class PhysicalExamination {
+public class PhysicalExamination_02_14 {
 
     static final int VMAX = 21; //시력 분포(0.0에서 01 단위로 21개)
 
