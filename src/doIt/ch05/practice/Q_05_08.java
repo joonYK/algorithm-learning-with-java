@@ -14,7 +14,7 @@ public class Q_05_08 {
     static void print() {
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++)
-                System.out.printf("%2c", j == pos[i] ? '■' : '□');
+                System.out.printf("%2c", i == pos[j] ? '■' : '□');
             System.out.println();
         }
         System.out.println();
