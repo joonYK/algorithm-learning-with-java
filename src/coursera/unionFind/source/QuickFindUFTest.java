@@ -1,13 +1,13 @@
-package coursera.unionFind;
+package coursera.unionFind.source;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class QuickUnionUFTest {
+public class QuickFindUFTest {
 
-    private UnionFind uf = new QuickUnionUF(10);
+    private UnionFind uf = new QuickFindUF(10);
 
     @Test
     public void connectedTest() {

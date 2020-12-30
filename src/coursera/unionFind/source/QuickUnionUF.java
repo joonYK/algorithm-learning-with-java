@@ -1,17 +1,16 @@
-package coursera.unionFind;
+package coursera.unionFind.source;
 
-public class QuickUnionUF implements UnionFind {
-    private int[] id;
+public class QuickUnionUF extends UnionFind {
 
     public QuickUnionUF(int N) {
-        this.id = new int[N];
+        super(N);
         for (int i = 0; i < N; i++)
-            id[i] = i;
+            ids[i] = i;
     }
 
     private int root(int i) {
-        while (i != id[i])
-            i = id[i];
+        while (i != ids[i])
+            i = ids[i];
         return i;
     }
 
@@ -19,7 +18,7 @@ public class QuickUnionUF implements UnionFind {
     public void union(int p, int q) {
         int i = root(p);
         int j = root(q);
-        id[i] = j;
+        ids[i] = j;
     }
 
     @Override
