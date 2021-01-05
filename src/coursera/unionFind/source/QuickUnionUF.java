@@ -4,13 +4,11 @@ public class QuickUnionUF extends UnionFind {
 
     public QuickUnionUF(int N) {
         super(N);
-        for (int i = 0; i < N; i++)
-            ids[i] = i;
     }
 
     private int root(int i) {
-        while (i != ids[i])
-            i = ids[i];
+        while (i != id[i])
+            i = id[i];
         return i;
     }
 
@@ -18,7 +16,7 @@ public class QuickUnionUF extends UnionFind {
     public void union(int p, int q) {
         int i = root(p);
         int j = root(q);
-        ids[i] = j;
+        id[i] = j;
     }
 
     @Override

@@ -2,10 +2,13 @@ package coursera.unionFind.source;
 
 public abstract class UnionFind {
 
-    protected int[] ids;
+    protected int[] id;
 
     public UnionFind(int N) {
-        ids = new int[N];
+        id = new int[N];
+
+        for (int i = 0; i < N; i++)
+            id[i] = i;
     }
 
     //연결
