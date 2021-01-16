@@ -1,6 +1,6 @@
 package coursera.stack;
 
-public class LinkedStackOfStrings implements Stack {
+public class LinkedStackOfStrings implements StackOfStrings {
 
     private Node first = null;
 

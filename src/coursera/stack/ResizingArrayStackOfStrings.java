@@ -1,6 +1,6 @@
 package coursera.stack;
 
-public class ResizingArrayStackOfStrings implements Stack {
+public class ResizingArrayStackOfStrings implements StackOfStrings {
 
     private String[] s;
     private int N = 0;

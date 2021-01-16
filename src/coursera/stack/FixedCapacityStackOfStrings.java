@@ -1,6 +1,6 @@
 package coursera.stack;
 
-public class FixedCapacityStackOfStrings implements Stack {
+public class FixedCapacityStackOfStrings implements StackOfStrings {
 
     private String[] s;
     private int N = 0;

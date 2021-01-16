@@ -1,6 +1,6 @@
 package coursera.stack;
 
-public interface Stack {
+public interface StackOfStrings {
 
     boolean isEmpty();
 
