@@ -25,7 +25,7 @@ public class WeightedQuickUnionUF extends UnionFind{
     public void union(int p, int q) {
         int i = root(p);
         int j = root(q);
-        if (i == q) return;
+        if (i == j) return;
 
         //트리의 가중치 비교 (작은 트리의 루트가 큰 트리의 루트에 연결되도록)
         if (sz[i] < sz[j]) {
