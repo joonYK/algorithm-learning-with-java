@@ -1,6 +1,6 @@
 package coursera.stack;
 
-public interface Stack<T> {
+public interface Stack<T> extends Iterable<T> {
 
     boolean isEmpty();
 

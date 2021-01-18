@@ -1,5 +1,7 @@
 package coursera.stack;
 
+import java.util.Iterator;
+
 public class FixedCapacityStack<T> implements Stack<T> {
 
     private T[] s;
@@ -21,5 +23,10 @@ public class FixedCapacityStack<T> implements Stack<T> {
         T item = s[--N];
         s[N] = null;
         return item;
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return null;
     }
 }

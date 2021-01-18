@@ -12,7 +12,7 @@ public class QueueTest {
     @DisplayName("연결 리스트 String Queue 테스트")
     public void linkedQueueOfStringsTest() {
         //given
-        Queue queue = new LinkedQueue();
+        Queue<String> queue = new LinkedQueue<>();
         check(queue);
     }
 
@@ -20,11 +20,11 @@ public class QueueTest {
     @DisplayName("동적 사이즈 배열 String Queue 테스트")
     public void resizingArrayQueueOfStringsTest() {
         //given
-        Queue queue = new ResizingArrayQueue();
+        Queue<String> queue = new ResizingArrayQueue<>();
         check(queue);
     }
 
-    private void check(Queue queue) {
+    private void check(Queue<String> queue) {
         //when
         for (int i = 0; i < 15; i++)
             queue.enqueue(String.valueOf(i));
