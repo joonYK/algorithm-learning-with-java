@@ -1,8 +1,8 @@
 package coursera.queues;
 
-public class ResizingArrayQueueOfStrings implements QueueOfStrings {
+public class ResizingArrayQueue<T> implements Queue<T> {
 
-    private String[] q = new String[10];
+    private T[] q = (T[]) new Object[10];
     private int head = 0;
     private int tail = 0;
 
@@ -12,7 +12,7 @@ public class ResizingArrayQueueOfStrings implements QueueOfStrings {
     }
 
     @Override
-    public void enqueue(String item) {
+    public void enqueue(T item) {
         q[tail++] = item;
         if (tail == q.length) {
             if (tail - head > q.length / 2)
@@ -24,7 +24,7 @@ public class ResizingArrayQueueOfStrings implements QueueOfStrings {
     }
 
     private void resize(int capacity) {
-        String[] copy = new String[capacity];
+        T[] copy = (T[]) new Object[capacity];
 
         for (int i = head; i < tail; i++)
             copy[i - head] = q[i];
@@ -35,11 +35,11 @@ public class ResizingArrayQueueOfStrings implements QueueOfStrings {
     }
 
     @Override
-    public String dequeue() {
+    public T dequeue() {
         if (isEmpty())
             return null;
 
-        String item = q[head];
+        T item = q[head];
         q[head++] = null;
 
         if (tail - head < q.length / 4)

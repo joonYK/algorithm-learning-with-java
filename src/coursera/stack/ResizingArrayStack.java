@@ -1,12 +1,12 @@
 package coursera.stack;
 
-public class ResizingArrayStackOfStrings implements StackOfStrings {
+public class ResizingArrayStack<T> implements Stack<T> {
 
-    private String[] s;
+    private T[] s;
     private int N = 0;
 
-    public ResizingArrayStackOfStrings() {
-        s = new String[1];
+    public ResizingArrayStack() {
+        s = (T[]) new Object[1];
     }
 
     @Override
@@ -15,22 +15,22 @@ public class ResizingArrayStackOfStrings implements StackOfStrings {
     }
 
     @Override
-    public void push(String item) {
+    public void push(T item) {
         if (N == s.length)
             resize(2 * s.length);
         s[N++] = item;
     }
 
     private void resize(int capacity) {
-        String[] copy = new String[capacity];
+        T[] copy = (T[]) new Object[capacity];
         for (int i = 0; i < N; i++)
             copy[i] = s[i];
         s = copy;
     }
 
     @Override
-    public String pop() {
-        String item = s[--N];
+    public T pop() {
+        T item = s[--N];
         s[N] = null;
         if (N > 0 && N == s.length/4)
             resize(s.length/2);

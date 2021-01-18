@@ -1,11 +1,11 @@
 package coursera.stack;
 
-public class LinkedStackOfStrings implements StackOfStrings {
+public class LinkedStack<T> implements Stack<T> {
 
     private Node first = null;
 
     private class Node {
-        String item;
+        T item;
         Node next;
     }
 
@@ -13,15 +13,15 @@ public class LinkedStackOfStrings implements StackOfStrings {
         return first == null;
     }
 
-    public void push(String item) {
+    public void push(T item) {
         Node oldFirst = first;
         first = new Node();
         first.item = item;
         first.next = oldFirst;
     }
 
-    public String pop() {
-        String item = first.item;
+    public T pop() {
+        T item = first.item;
         first = first.next;
         return item;
     }

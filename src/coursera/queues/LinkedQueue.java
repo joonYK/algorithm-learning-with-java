@@ -1,12 +1,12 @@
 package coursera.queues;
 
-public class LinkedQueueOfStrings implements QueueOfStrings {
+public class LinkedQueue<T> implements Queue<T> {
 
     private Node first;
     private Node last;
 
     private class Node {
-        String item;
+        T item;
         Node next;
     }
 
@@ -16,7 +16,7 @@ public class LinkedQueueOfStrings implements QueueOfStrings {
     }
 
     @Override
-    public void enqueue(String item) {
+    public void enqueue(T item) {
         Node oldLast = last;
         last = new Node();
         last.item = item;
@@ -27,8 +27,8 @@ public class LinkedQueueOfStrings implements QueueOfStrings {
     }
 
     @Override
-    public String dequeue() {
-        String item = first.item;
+    public T dequeue() {
+        T item = first.item;
         first = first.next;
         if (isEmpty())
             last = null;
