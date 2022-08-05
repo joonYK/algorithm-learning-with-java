@@ -1,45 +1,46 @@
-package inflearn.twoPointers;
+package inflearn.twoPointersAndSlidingWindow;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * 두 배열 합치기
- * 오름차순으로 정렬이 된 두 배열이 주어지면 두 배열을 오름차순으로 합쳐 출력하는 프로그램 작성.
+ * 공통원소 구하기
+ * A, B 두 개의 집합이 주어지면 두 집합의 공통 원소를 추출하여 오름차순으로 출력하는 프로그램을 작성
  *
- * 첫 번째 줄에 첫 번째 배열의 크기 N(1<=N<=100)이 주어집니다.
- * 두 번째 줄에 N개의 배열 원소가 오름차순으로 주어집니다.
- * 세 번째 줄에 두 번째 배열의 크기 M(1<=M<=100)이 주어집니다.
- * 네 번째 줄에 M개의 배열 원소가 오름차순으로 주어집니다.
+ * 첫 번째 줄에 집합 A의 크기 N(1<=N<=30,000)이 주어집니다.
+ * 두 번째 줄에 N개의 원소가 주어집니다. 원소가 중복되어 주어지지 않습니다.
+ * 세 번째 줄에 집합 B의 크기 M(1<=M<=30,000)이 주어집니다.
+ * 네 번째 줄에 M개의 원소가 주어집니다. 원소가 중복되어 주어지지 않습니다.
+ * 각 집합의 원소는 1,000,000,000이하의 자연수입니다.
  *
  * 입력 예시
- * 3
- * 1 3 5
  * 5
- * 2 3 6 7 9
+ * 1 3 9 5 2
+ * 5
+ * 3 2 5 7 8
  *
  * 출력 예시
- * 1 2 3 3 5 6 7 9
+ * 2 3 5
  */
-public class TwoPointers1 {
+public class TwoPointers2 {
 
     private static ArrayList<Integer> solution(int n, int m, int[] arr1, int[] arr2) {
         ArrayList<Integer> answer = new ArrayList<>();
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
         int p1 = 0, p2 = 0;
 
         while (p1 < n && p2 < m) {
-            if (arr1[p1] < arr2[p2]) {
+            if (arr1[p1] == arr2[p2]) {
                 answer.add(arr1[p1++]);
+                p2++;
+            } else if (arr1[p1] < arr2[p2]) {
+                p1++;
             } else {
-                answer.add(arr2[p2++]);
+                p2++;
             }
         }
-
-        while (p1 < n)
-            answer.add(arr1[p1++]);
-
-        while (p2 < m)
-            answer.add(arr2[p2++]);
 
         return answer;
     }
@@ -65,6 +66,5 @@ public class TwoPointers1 {
         for (Integer i : solution(n, m, arr1, arr2)) {
             System.out.print(i + " ");
         }
-
     }
 }
