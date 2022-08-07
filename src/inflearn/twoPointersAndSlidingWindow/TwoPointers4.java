@@ -39,7 +39,29 @@ public class TwoPointers4 {
             }
         }
 
+        return answer;
+    }
 
+    private static int solution2(int n) {
+        int answer = 0, cnt = 1;
+        n--;
+
+        while (n > 0) {
+            cnt++;
+            n -= cnt;
+
+            /*
+             * 처음 n이 15일 경우
+             * cnt = 2, n = 12 라는 것은 1 + 2 + n = 15
+             * n / cnt = 6
+             * (1 + n / cnt) + (2 + n / cnt) = 15
+             *
+             * 따라서 n % cnt == 0 이 조건을 성립.
+             */
+            if (n % cnt == 0) {
+                answer++;
+            }
+        }
 
         return answer;
     }
@@ -48,6 +70,7 @@ public class TwoPointers4 {
         Scanner in = new Scanner(System.in);
         System.out.print("N : ");
         int n = in.nextInt();
-        System.out.print(solution(n));
+        System.out.println(solution(n));
+        System.out.println(solution2(n));
     }
 }
